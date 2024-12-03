@@ -25,10 +25,7 @@ fn main() {
                     continue 'TopLoop;
                 } else {
                     one_bad = true;
-                    if i+1 == data.len() {
-                        continue 'each;
-                    }
-                    data[i] = data[i+1]+1;
+                    data[i] = data[i-1];
                     continue 'each;
                 }
             } else if !ascending && d1 >= d0 {
@@ -37,10 +34,7 @@ fn main() {
                     continue 'TopLoop;
                 } else {
                     one_bad = true;
-                    if i+1 == data.len() {
-                        continue 'each;
-                    }
-                    data[i] = data[i+1]-1;
+                    data[i] = data[i-1];
                     continue 'each;
                 }
             }
@@ -51,10 +45,7 @@ fn main() {
                         continue 'TopLoop;
                     } else {
                         one_bad = true;
-                        if i+1 == data.len() {
-                            continue 'each;
-                        }
-                        data[i] = data[i+1]+1;
+                        data[i] = data[i-1];
                         continue 'each;
                     }
                 }
@@ -65,15 +56,12 @@ fn main() {
                         continue 'TopLoop;
                     } else {
                         one_bad = true;
-                        if i+1 == data.len() {
-                            continue 'each;
-                        }
-                        data[i] = data[i+1]-1;
+                        data[i] = data[i-1];
                         continue 'each;
                     }
                 }
             }
         }
     }
-    println!("{}",num_unsafe);
+    println!("{}",1000-num_unsafe);
 }
